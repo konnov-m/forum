@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="post__item">
+                <div class="post__main">
+                    <div class="post__header">
+                        <div class="post__title">
+                            Best of Cup 2021
+                        </div>
+                    </div>
+                    <div class="post__date">Дата публикации : {{ post.created_at}}</div>
+                    <div class="post__description">{{ post.content }}
+                    </div>
+                    <div class="post__info">
+                        <div class="post__author">
+                            <div class="post__author__nickname">
+                                <a href="#">{{ post.author.username}}</a>
+                            </div>
+                            {% if post.updated_at != post.created_at %}
+                            <div class="post__edit__data">Дата редактирования : {{ post.updated_at}}</div>
+                            {% endif %}
+                        </div>
+                        <div class="post__edit">
+                            <button type="button" class="btn btn-light">Редактировать<img src="{% static 'Assets/image/pen.svg' %}" alt="pen"></button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="add__comment">
+                <div class="add_commnent__inner">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Написать комментарий" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Отправить</button>
+                    </div>
+                </div>
+            </div>
+            <div class="main__comment">
+                <div class="author">
+                    <a href="#"><img src="{% static 'Assets/image/user.svg'%}" alt=""></a>
+                    <div class="comment__author">llanskoyll</div>
+                </div>
+                <div class="comment__content">
+                    Etiam auctor purus eu tincidunt cursus.
+                    Aenean fermentum lacinia urna.
+                    Suspendisse ultricies justo quis libero aliquam vestibulum.
+                </div>
+                <div class="comment__date">
+                    <div class="comment__date__content">Дата публикации : 07.10.2021</div>
+                    <div class="comment__date__btn"><button type="button" class="btn btn-"><img src="{% static 'Assets/image/delete.svg' %}" alt=""></button></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="user">
+                <div class="user__item">
+                    <div class="user__item__block">
+                        <div class="user__name">
+                            <a href="#"><img src="{% static 'Assets/image/user.svg' %}" alt=""></a>
+                            llanskoyll
+                        </div>
+                        <div class="user__role">Роль : Пользователь</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

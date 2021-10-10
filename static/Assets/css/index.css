@@ -1,0 +1,262 @@
+/*font-family: 'Do Hyeon', sans-serif;*/
+/*font-family: 'Prompt', sans-serif;*/
+/*font-family: 'Roboto', sans-serif;*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+.row {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    --bs-gutter-x: 0rem;
+}
+.col-3,col-6 {
+    --bs-gutter-x: 0rem;
+}
+/*  Header  */
+.logoImg {
+    width: 32px;
+    height: 32px;
+}
+
+.nav-link a {
+    color: #fff;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+}
+
+/* Animation Logo IMG */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.logoImg {
+    animation: spin 20s linear 0s infinite;
+}
+
+.profile {
+    display: flex;
+}
+
+
+/* Main  */
+
+Main {
+    margin-top: 75px;
+}
+
+/*New post */
+
+.newPost__inner {
+    padding-left: 20px;
+}
+.form-floating {
+    width: 100%;
+}
+.floatingTextarea2 {
+    font-size: 14px;
+}
+.textarea-post {
+    height: 200px;
+}
+/* POST */
+.post__item {
+    margin-bottom: 20px;
+    padding: 5px;
+    border: 1px solid #999;
+    border-radius: 15px;
+}
+
+.post__title {
+    text-align: center;
+    font-size: 21px;
+    font-family: 'Prompt', sans-serif;
+    font-weight: normal;
+    position: relative;
+}
+
+.post__title:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    width: 240px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    background-color: #999;
+}
+
+.post__description {
+    margin-top: 10px;
+    padding: 0px 2px;
+    font-family: 'Prompt', sans-serif;
+}
+
+.post__info {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.post__author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post__author__nickname a {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #000;
+}
+
+.post__author__nickname a:hover {
+    color: #212529;
+}
+
+.post__date {
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+.post__discussion a {
+    text-decoration: none;
+    color: #212529;
+    transition: color .2s linear;
+}
+
+.post__discussion a:hover {
+    color: #212529;
+}
+.post__edit {
+    justify-items: center;
+}
+.post__edit img {
+    height: 24px;
+    width: 24px;
+    margin-left: 4px;
+}
+.post__edit__data {
+    font-size: 14px;
+    margin-left: 5px;
+}
+/* User Main */
+.user__item {
+    text-align: center;
+}
+
+.user__name {
+    align-items: center;
+}
+.user__exit {
+    margin-top: 5px
+}
+/*Comment */
+.add_commnent__inner {
+    display: flex;
+    margin-bottom: 25px;
+}
+.add_commnent__inner input{
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 5px;
+}
+.add_commnent__inner button {
+    margin-left: 5px;
+}
+.main__comment {
+    position: relative;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+}
+
+.comment__author {
+    margin-left: 5px;
+}
+
+.author {
+    margin-bottom: 5px;
+}
+
+.comment__content {
+    margin-top: 2px;
+    padding: 0px 5px;
+    font-family: 'Prompt', sans-serif;
+}
+
+.comment__date {
+    font-size: 12px;
+}
+
+.comment__date:after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 90%;
+    background-color: #999;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+}
+.comment__date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* Profile */
+
+.profile__inner {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+}
+.profile__photo img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+.give__role {
+    margin-top: 10px;
+    margin-left: 40px;
+}
+.delete__profile {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 400px) and (max-height: 600px) {
+  .post__content__parh{
+      font-size: 4px;
+  }
+}

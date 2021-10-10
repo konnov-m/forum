@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="profile">
+                <div class="profile__inner">
+                    <div class="profile__photo">
+                        <img src="{% static 'Assets/image/user.svg' %}" alt="">
+                    </div>
+                    <div class="profile__info">
+                        <div class="profile__name">Имя пользователя : llanskoyll</div>
+                        <div class="profile__role">Роль пользователя : User</div>
+                        <div class="profile__dateReg">Дата регистрации : 07.08.2021</div>
+                    </div>
+                    <div class="give__role">
+                        <p>Выдать роль</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                Читатель
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios" value="option2" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                Автор
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="delete__profile">
+                <button type="button" class="btn btn-danger">Удалить пользователя</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+    </div>
+
+{% endblock %}
