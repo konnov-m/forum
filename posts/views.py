@@ -51,7 +51,7 @@ class ProfileView(DataMixin, TemplateView):
 
 class MainView(DataMixin, CreateView):
     form_class = PostForm
-    template_name = 'index.html'
+    template_name = 'Forum1/index.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

@@ -1,0 +1,197 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Форум</title>
+    <link rel="stylesheet" href="{% static 'Assets/css/index.css'%}"/>
+    <link rel="stylesheet" href="{% static 'Assets/css/adapt.css'%}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+
+<Header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html    ">Главная</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Профиль</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Помощь</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Вход</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Регистрация</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</Header>
+
+
+<Main>
+    <div class="row">
+        <div class="col-3">
+            <div class="newPost">
+                <div class="newPost__inner">
+                    <div class="input-group mb-3">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Заголовок</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                   aria-describedby="inputGroup-sizing-default"/>
+                        </div>
+                        <div class="form-floating">
+                            <textarea class="form-control textarea-post" placeholder="Leave a comment here"
+                                      id="floatingTextarea2" style="height: 125px"></textarea>
+                            <label for="floatingTextarea2">Содержание</label>
+                        </div>
+
+                    </div>
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1">Опубликовать</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="post">
+                <!-- Typical Post -->
+                <div class="post__item">
+                    <div class="post__main">
+                        <div class="post__header">
+                            <div class="post__title">
+                                Best of Cup 2021
+                            </div>
+                        </div>
+                        <div class="post__description">
+                            <p class="post__description__fix">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent congue tempor massa,
+                                eu sodales leo accumsan sit amet. Quisque placerat massa a mauris ullamcorper mollis sed
+                                accumsan ante. Quisque volutpat sit amet turpis eu pretium. In posuere turpis risus.
+                                Integer vel mi ac eros dapibus posuere at eu nulla. Etiam auctor purus eu tincidunt
+                                cursus. Aenean fermentum lacinia urna. Suspendisse ultricies justo quis libero aliquam
+                                vestibulum.
+                            </p>
+                        </div>
+                        <div class="post__info">
+                            <div class="post__author">
+                                <div class="post__author__nickname">
+                                    <a href="#">llanskoyll</a>
+                                </div>
+                                <div class="post__date">Дата публикации : 07.10.2021</div>
+                            </div>
+                            <div class="post__discussion">
+                                <a href="discussion.html">Перейти к обсуждению</a>
+                                <button type="button" class="btn btn-danger">Удалить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post__item">
+                    <div class="post__main">
+                        <div class="post__header">
+                            <div class="post__title">
+                                Best of Cup 2021
+                            </div>
+                        </div>
+                        <div class="post__description">
+                            <p class="post__description__fix">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent congue tempor massa,
+                                eu sodales leo accumsan sit amet. Quisque placerat massa a mauris ullamcorper mollis sed
+                                accumsan ante. Quisque volutpat sit amet turpis eu pretium. In posuere turpis risus.
+                                Integer vel mi ac eros dapibus posuere at eu nulla. Etiam auctor purus eu tincidunt
+                                cursus. Aenean fermentum lacinia urna. Suspendisse ultricies justo quis libero aliquam
+                                vestibulum.
+                            </p>
+                        </div>
+                        <div class="post__info">
+                            <div class="post__author">
+                                <div class="post__author__nickname">
+                                    <a href="#">llanskoyll</a>
+                                </div>
+                                <div class="post__date">Дата публикации : 07.10.2021</div>
+                            </div>
+                            <div class="post__discussion">
+                                <a href="discussion.html">Перейти к обсуждению</a>
+                                <button type="button" class="btn btn-danger">Удалить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post__item">
+                    <div class="post__main">
+                        <div class="post__header">
+                            <div class="post__title">
+                                Best of Cup 2021
+                            </div>
+                        </div>
+                        <div class="post__description">
+                            <p class="post__description__fix">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent congue tempor massa,
+                                eu sodales leo accumsan sit amet. Quisque placerat massa a mauris ullamcorper mollis sed
+                                accumsan ante. Quisque volutpat sit amet turpis eu pretium. In posuere turpis risus.
+                                Integer vel mi ac eros dapibus posuere at eu nulla. Etiam auctor purus eu tincidunt
+                                cursus. Aenean fermentum lacinia urna. Suspendisse ultricies justo quis libero aliquam
+                                vestibulum.
+                            </p>
+                        </div>
+                        <div class="post__info">
+                            <div class="post__author">
+                                <div class="post__author__nickname">
+                                    <a href="#">llanskoyll</a>
+                                </div>
+                                <div class="post__date">Дата публикации : 07.10.2021</div>
+                            </div>
+                            <div class="post__discussion">
+                                <a href="discussion.html">Перейти к обсуждению</a>
+                                <button type="button" class="btn btn-danger">Удалить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="user">
+                <div class="user__item">
+                    <div class="user__item__block">
+                        <div class="user__name">
+                            <a href="#"><img src="Assets/image/user.svg" alt=""></a>
+                            llanskoyll
+                        </div>
+                        <div class="user__role">Роль : Читатель</div>
+                        <div class="user__exit">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Выход</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</Main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
