@@ -113,8 +113,13 @@ Main {
     margin-top: 10px;
     padding: 0px 2px;
     font-family: 'Prompt', sans-serif;
-}
 
+}
+.post__description__fix {
+    font-size: 16px;
+    width: 100%;
+    overflow: hidden;
+}
 .post__info {
     margin-top: 5px;
     display: flex;
@@ -148,7 +153,14 @@ Main {
     color: #212529;
     transition: color .2s linear;
 }
-
+.post__discussion button {
+    width: 60px;
+    height: 25px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .post__discussion a:hover {
     color: #212529;
 }
@@ -253,10 +265,4 @@ Main {
     margin-top: 20px;
     display: flex;
     justify-content: center;
-}
-
-@media (max-width: 400px) and (max-height: 600px) {
-  .post__content__parh{
-      font-size: 4px;
-  }
 }
