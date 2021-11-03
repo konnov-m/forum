@@ -4,6 +4,21 @@ from django.urls import reverse
 from django.utils import timezone
 
 
+class Role(models.Model):
+    title = models.CharField(max_length=63)
+    add_post = models.BooleanField()
+    add_comment = models.BooleanField()
+    delete_post = models.BooleanField()
+    delete_comment = models.BooleanField()
+    change_role = models.BooleanField()
+
+    class Meta:
+        verbose_name_plural = "Роли"
+
+    def __str__(self):
+        return self.title
+
+
 class Posts(models.Model):
     title = models.CharField(max_length=128)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='Автор')
@@ -27,3 +42,13 @@ class Posts(models.Model):
     class Meta:
         verbose_name_plural = "Посты"
 
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='Пользователь')
+    role = models.ForeignKey(Role, on_delete=models.CASCADE, related_name='Роль')
+
+    def __str__(self):
+        return self.user.username
+
+    class Meta:
+        verbose_name_plural = "Профили"

@@ -12,24 +12,32 @@
                         <img src="{% static 'Assets/image/user.svg' %}" alt="">
                     </div>
                     <div class="profile__info">
-                        <div class="profile__name">Имя пользователя : llanskoyll</div>
-                        <div class="profile__role">Роль пользователя : User</div>
-                        <div class="profile__dateReg">Дата регистрации : 07.08.2021</div>
+                        <div class="profile__name">Имя пользователя : {{ profile.user.username }}</div>
+                        <div class="profile__role">Роль пользователя : {{ profile.role.title }}</div>
+                        <div class="profile__dateReg">Дата регистрации : {{ profile.user.date_joined }}</div>
                     </div>
+
                     <div class="give__role">
+                        {% if profile.role.change_role %}
                         <p>Выдать роль</p>
+                            {% for role in form.role %}
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                            <label class="form-check-label" for="exampleRadios1">
-                                Читатель
+                            {% if profile.role.title == role %}
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="{{ role.id_for_label }}" value="{{ role.label }}" checked>
+                                {% else %}
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="{{ role.id_for_label }}" value="{{ role.label }}" >
+                            {% endif %}
+                            <label class="form-check-label" for="{{ role.id_for_label }}">
+                                {{ role.label}}
+
                             </label>
+                            {{role}}
+                            </div>
+                        <div class="form-error">{{ role.errors }}</div>
+                                {% endfor %}
+                    </div>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios" value="option2" checked>
-                            <label class="form-check-label" for="exampleRadios1">
-                                Автор
-                            </label>
-                        </div>
+                        {% endif %}
                     </div>
                 </div>
 

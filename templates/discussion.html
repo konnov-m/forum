@@ -26,12 +26,14 @@
                             {% endif %}
                         </div>
                         <div class="post__edit">
+                            {% if user == post.author %}
                             <button type="button" class="btn btn-light">Редактировать<img src="{% static 'Assets/image/pen.svg' %}" alt="pen"></button>
-
+                            {% endif %}
                         </div>
                     </div>
                 </div>
             </div>
+            {% if profile.role.add_comment %}
             <div class="add__comment">
                 <div class="add_commnent__inner">
                     <div class="input-group mb-3">
@@ -40,6 +42,7 @@
                     </div>
                 </div>
             </div>
+            {% endif %}
             <div class="main__comment">
                 <div class="author">
                     <a href="#"><img src="{% static 'Assets/image/user.svg'%}" alt=""></a>
@@ -52,22 +55,31 @@
                 </div>
                 <div class="comment__date">
                     <div class="comment__date__content">Дата публикации : 07.10.2021</div>
+                    {% if profile.role.delete_comment%}
                     <div class="comment__date__btn"><button type="button" class="btn btn-"><img src="{% static 'Assets/image/delete.svg' %}" alt=""></button></div>
+                    {% endif %}
                 </div>
             </div>
         </div>
         <div class="col-3">
+             {% if request.user.is_authenticated %}
             <div class="user">
                 <div class="user__item">
                     <div class="user__item__block">
                         <div class="user__name">
-                            <a href="#"><img src="{% static 'Assets/image/user.svg' %}" alt=""></a>
-                            llanskoyll
+                            <a href="#"><img src="{% static 'Assets/image/user.svg'%}" alt=""></a>
+                            {{ user.username }}
                         </div>
-                        <div class="user__role">Роль : Пользователь</div>
+                        <div class="user__role">Роль : {{ profile.role.title }}</div>
+                        <div class="user__exit">
+                            <a href="{% url 'logout' %}">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Выход</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
 

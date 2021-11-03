@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 
-from posts.views import RegisterView, LoginView, MainView, PostView, ProfileView, logout_user
+from posts.views import RegisterView, LoginView, MainView, ProfileView, logout_user, PostView
 
 urlpatterns = [
     path('register/', RegisterView.as_view(), name='register'),
@@ -10,5 +10,5 @@ urlpatterns = [
     path('', MainView.as_view(), name='main'),
     path('admin/', admin.site.urls),
     path('post/<slug:slug>', PostView.as_view(), name='post'),
-    path('profile/', ProfileView.as_view(), name='profile')
+    path('profile/<int:pk>', ProfileView.as_view(), name='profile')
 ]

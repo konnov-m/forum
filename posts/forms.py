@@ -34,3 +34,12 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Posts
         fields = ['title', 'slug', 'content']
+
+
+class ProfileForm(forms.ModelForm):
+    role = forms.ModelChoiceField(queryset=Role.objects.all(), label='Роль', initial=0,
+                                  widget=forms.Select(attrs={'class': 'form-check-input'}))
+
+    class Meta:
+        model = Profile
+        fields = ['role']

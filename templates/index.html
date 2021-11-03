@@ -4,7 +4,8 @@
 
 {% block content %}
     <div class="row">
-        <div class="col-3 col-12-lg">
+        <div class="col-3">
+            {% if profile.role.add_post %}
             <form method="post">
                 {% csrf_token %}
             <div class="newPost">
@@ -21,9 +22,6 @@
                             {{ form.slug }}
                                 <div class="form-error">{{ form.slug.errors }}</div>
                                 </div>
-
-
-
                         <div class="form-floating">
                             {{ form.content }}
                             <label for="{{ form.content.id_for_label }}">{{ form.content.label }}</label>
@@ -34,7 +32,9 @@
                     <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Опубликовать</button>
                 </div>
             </div>
-        </form>
+            </form>
+            {% endif %}
+
         </div>
         <div class="col-6">
             <div class="post">
@@ -44,11 +44,13 @@
                     <div class="post__main">
                         <div class="post__header">
                             <div class="post__title">
-                               {{ post.title}}
+                                {{ post.title}}
                             </div>
                         </div>
                         <div class="post__description">
-                            {{ post.content }}
+                            <p class="post__description__fix">
+                                {{ post.content }}
+                            </p>
                         </div>
                         <div class="post__info">
                             <div class="post__author">
@@ -59,16 +61,20 @@
                             </div>
                             <div class="post__discussion">
                                 <a href="{% url 'post' post.slug %}">Перейти к обсуждению</a>
-                                <button type="button" class="btn btn-"><img src="{% static 'Assets/image/delete.svg'%}" alt=""></button>
+                                {% if profile.role.delete_post %}
+                                <button type="button" class="btn btn-danger">Удалить</button>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
                 </div>
-
                 {% endfor %}
+
+
+
             </div>
         </div>
-        <div class="col-3 col-12-lg">
+        <div class="col-3">
             {% if request.user.is_authenticated %}
             <div class="user">
                 <div class="user__item">
@@ -77,9 +83,11 @@
                             <a href="#"><img src="{% static 'Assets/image/user.svg'%}" alt=""></a>
                             {{ user.username }}
                         </div>
-                        <div class="user__role">Роль : Читатель</div>
+                        <div class="user__role">Роль : {{ profile.role.title }}</div>
                         <div class="user__exit">
-                            <a href="{% url 'logout' %}"><button class="btn btn-outline-secondary" type="button" id="button-addon2">Выход</button></a>
+                            <a href="{% url 'logout' %}">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Выход</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -87,6 +95,4 @@
             {% endif %}
         </div>
     </div>
-
-
 {% endblock %}
